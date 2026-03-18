@@ -50,21 +50,21 @@ export default function InspectionDetail() {
           </div>
 
           {/* Right: category rows */}
-          <div className="flex flex-col divide-y" style={{ borderColor: "var(--sand)" }}>
+          <div className="flex flex-col" style={{ borderTop: "1px solid var(--sand)" }}>
             {inspectionCategories.map(({ title, items }) => (
-              <div key={title} className="py-5 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
+              <div
+                key={title}
+                className="py-5 flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-0"
+                style={{ borderBottom: "1px solid var(--sand)" }}
+              >
                 <div
-                  className="text-[13px] font-semibold tracking-[0.04em] uppercase shrink-0 sm:w-48"
+                  className="text-[11px] font-bold tracking-[0.1em] uppercase shrink-0 sm:w-52"
                   style={{ color: "var(--text-dark)" }}
                 >
                   {title}
                 </div>
-                <div className="flex flex-wrap gap-x-5 gap-y-1">
-                  {items.map((item) => (
-                    <span key={item} className="text-[14px]" style={{ color: "var(--text-mid)" }}>
-                      {item}
-                    </span>
-                  ))}
+                <div className="text-[14px]" style={{ color: "var(--text-mid)" }}>
+                  {items.join(" · ")}
                 </div>
               </div>
             ))}
