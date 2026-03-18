@@ -15,12 +15,12 @@ export default function Hero() {
     >
       {/* Background image */}
       <Image
-        src="/images/home1.jpg"
+        src="/images/home2.jpg"
         alt="Custom home exterior"
         fill
         priority
         className="object-cover"
-        style={{ opacity: 0.35 }}
+        style={{ opacity: 0.4 }}
       />
 
       {/* Gradient overlay */}
