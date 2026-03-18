@@ -15,8 +15,8 @@ export default function Hero() {
     >
       {/* Background image */}
       <Image
-        src="/images/home1.jpg"
-        alt="Luxury custom home exterior"
+        src="/images/home2.jpg"
+        alt="Custom home exterior"
         fill
         priority
         className="object-cover"
