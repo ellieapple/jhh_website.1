@@ -44,21 +44,15 @@ export default function InspectionDetail() {
 
         {/* Top row: 3 cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
-          {inspectionBlocks.slice(0, 3).map(({ title, body }, index) => (
+          {inspectionBlocks.slice(0, 3).map(({ title, body }) => (
             <div
               key={title}
               className="card-light group relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(32,27,20,0.1)]"
             >
-              <span
-                className="absolute top-4 right-5 text-[10px] font-bold tracking-[0.14em] uppercase"
-                style={{ color: "rgba(74,74,74,0.45)" }}
-              >
-                0{index + 1}
-              </span>
-              <h4 className="font-serif text-[19px] mb-3 pr-8" style={{ color: "var(--text-dark)" }}>
+              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
-              <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
+              <p className="text-[14px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
                 {body}
               </p>
             </div>
@@ -67,21 +61,15 @@ export default function InspectionDetail() {
 
         {/* Bottom row: 2 wider cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {inspectionBlocks.slice(3).map(({ title, body }, index) => (
+          {inspectionBlocks.slice(3).map(({ title, body }) => (
             <div
               key={title}
               className="card-light group relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(32,27,20,0.1)]"
             >
-              <span
-                className="absolute top-4 right-5 text-[10px] font-bold tracking-[0.14em] uppercase"
-                style={{ color: "rgba(74,74,74,0.45)" }}
-              >
-                0{index + 4}
-              </span>
-              <h4 className="font-serif text-[19px] mb-3 pr-8" style={{ color: "var(--text-dark)" }}>
+              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
-              <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
+              <p className="text-[14px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
                 {body}
               </p>
             </div>
@@ -89,7 +77,7 @@ export default function InspectionDetail() {
         </div>
 
         <p
-          className="mt-10 text-[13px]"
+          className="mt-10 text-[14px]"
           style={{ color: "var(--text-mid)", borderLeft: "2px solid var(--accent-gold)", paddingLeft: "14px" }}
         >
           We provide a full, comprehensive report.

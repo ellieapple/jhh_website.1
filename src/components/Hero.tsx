@@ -11,7 +11,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative flex items-center overflow-hidden"
-      style={{ minHeight: "calc(100svh - 97px)", marginTop: "97px", background: "var(--slate-900)" }}
+      style={{ minHeight: "100svh", marginTop: "97px", background: "var(--slate-900)" }}
     >
       {/* Background image */}
       <Image
@@ -20,7 +20,7 @@ export default function Hero() {
         fill
         priority
         className="object-cover"
-        style={{ opacity: 0.28, objectPosition: "center center" }}
+        style={{ opacity: 0.3, objectPosition: "center center" }}
       />
 
       {/* Gradient overlay */}
@@ -28,12 +28,12 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(115deg, rgba(15,25,35,0.94) 0%, rgba(15,25,35,0.72) 46%, rgba(15,25,35,0.9) 100%)",
+            "linear-gradient(135deg, rgba(15,25,35,0.92) 0%, rgba(15,25,35,0.62) 50%, rgba(15,25,35,0.86) 100%)",
         }}
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[720px] px-6 sm:px-10 py-12 sm:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-[720px] px-6 sm:px-10 py-12 sm:py-16">
         {/* Badge */}
         <div
           className="animate-fade-up-1 inline-flex items-center gap-2 px-4 py-2 mb-7 text-[11px] font-bold tracking-[0.12em] uppercase"
@@ -50,7 +50,7 @@ export default function Hero() {
         {/* Headline */}
         <h1
           className="animate-fade-up-2 font-serif leading-[1.08] mb-5"
-          style={{ fontSize: "clamp(34px, 5.2vw, 62px)", color: "var(--warm-white)", letterSpacing: "-0.01em" }}
+          style={{ fontSize: "clamp(36px, 5.5vw, 62px)", color: "var(--warm-white)", letterSpacing: "-0.01em" }}
         >
           Your Area&apos;s Premier Builder{" "}
           <em style={{ fontStyle: "italic", color: "var(--accent-gold)" }}>&amp; Building</em> Consultant
