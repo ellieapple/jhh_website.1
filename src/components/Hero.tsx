@@ -11,16 +11,16 @@ export default function Hero() {
     <section
       id="hero"
       className="relative flex items-center overflow-hidden"
-      style={{ minHeight: "100svh", marginTop: "97px", background: "var(--slate-900)" }}
+      style={{ minHeight: "88vh", marginTop: "97px", background: "var(--slate-900)" }}
     >
       {/* Background image */}
       <Image
-        src="/images/living.png"
-        alt="Refined residential interior"
+        src="/images/home1.jpg"
+        alt="Luxury custom home exterior"
         fill
         priority
         className="object-cover"
-        style={{ opacity: 0.3, objectPosition: "center center" }}
+        style={{ opacity: 0.45, objectPosition: "center center" }}
       />
 
       {/* Gradient overlay */}
@@ -28,63 +28,55 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(15,25,35,0.92) 0%, rgba(15,25,35,0.62) 50%, rgba(15,25,35,0.86) 100%)",
+            "linear-gradient(180deg, rgba(15,25,35,0.78) 0%, rgba(15,25,35,0.52) 45%, rgba(15,25,35,0.82) 100%)",
         }}
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[720px] px-6 sm:px-10 py-12 sm:py-16">
-        {/* Badge */}
-        <div
-          className="animate-fade-up-1 inline-flex items-center gap-2 px-4 py-2 mb-7 text-[11px] font-bold tracking-[0.12em] uppercase"
-          style={{
-            background: "rgba(201,165,92,0.12)",
-            border: "1px solid rgba(201,165,92,0.25)",
-            color: "var(--accent-gold)",
-          }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent-gold)" }} />
+      <div className="relative z-10 w-full max-w-[820px] px-6 sm:px-10 py-14 sm:py-20">
+        <p className="animate-fade-up-1 text-[12px] tracking-[0.14em] uppercase mb-6" style={{ color: "var(--accent-gold)" }}>
           {STATES_BADGE}
-        </div>
+        </p>
 
         {/* Headline */}
         <h1
           className="animate-fade-up-2 font-serif leading-[1.08] mb-5"
-          style={{ fontSize: "clamp(36px, 5.5vw, 62px)", color: "var(--warm-white)", letterSpacing: "-0.01em" }}
+          style={{ fontSize: "clamp(42px, 6.2vw, 80px)", color: "var(--warm-white)", letterSpacing: "-0.015em" }}
         >
-          Your Area&apos;s Premier Builder{" "}
-          <em style={{ fontStyle: "italic", color: "var(--accent-gold)" }}>&amp; Building</em> Consultant
+          J.H.H. Contracting
+          <br />
+          Consultants
         </h1>
 
         {/* Sub */}
         <p
-          className="animate-fade-up-3 text-[15px] sm:text-[17px] leading-[1.7] mb-9 max-w-[520px]"
-          style={{ color: "rgba(245,242,237,0.7)" }}
+          className="animate-fade-up-3 text-[19px] sm:text-[22px] leading-[1.35] mb-3 max-w-[620px] font-serif"
+          style={{ color: "rgba(245,242,237,0.92)" }}
         >
-          20+ years of hands-on experience across HVAC, roofing, siding, framing, and plumbing. 
-          From ground-up construction to home renovations — we understand how the entire system works together.
+          20+ Years of Hands-On Construction Experience
+          <br />
+          Serving Pennsylvania &amp; New Jersey
+        </p>
+        <p className="animate-fade-up-3 text-[16px] leading-[1.55] mb-9" style={{ color: "rgba(245,242,237,0.78)" }}>
+          Residential • Commercial • Inspection • Consultation
         </p>
 
         {/* CTAs */}
-        <div className="animate-fade-up-4 flex flex-wrap gap-3.5">
+        <div className="animate-fade-up-4 flex flex-wrap gap-3.5 items-center">
           <button onClick={openModal} className="btn-primary">
-            Get Free Estimate &rarr;
+            Get Free Estimate
           </button>
           <a href="#work" className="btn-secondary">
             View Our Work
           </a>
+          <a
+            href={PHONE_HREF}
+            className="text-[28px] sm:text-[32px] leading-none font-serif no-underline"
+            style={{ color: "rgba(245,242,237,0.88)" }}
+          >
+            {PHONE_DISPLAY}
+          </a>
         </div>
-
-        {/* Phone */}
-        <a
-          href={PHONE_HREF}
-          className="animate-fade-up-4 mt-6 inline-flex items-center gap-2 text-sm font-medium transition-colors no-underline"
-          style={{ color: "rgba(245,242,237,0.5)" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-gold)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,242,237,0.5)")}
-        >
-          &#9742; {PHONE_DISPLAY}
-        </a>
       </div>
     </section>
   );
