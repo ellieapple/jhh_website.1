@@ -1,28 +1,22 @@
 const trustItems = [
-  { icon: "✦", label: "45+ Years Experience" },
-  { icon: "◈", label: "Licensed & Bonded" },
-  { icon: "☆", label: "NACHI Certified" },
-  { icon: "◉", label: "Multi-Trade Expertise" },
+  "45+ Years Experience",
+  "Licensed & Bonded",
+  "Multi-Trade Expertise",
 ];
 
 export default function TrustBar() {
   return (
     <div
-      className="flex justify-center gap-12 flex-wrap px-6 sm:px-10 py-7 border-t"
+      className="flex justify-center gap-8 sm:gap-12 flex-wrap px-6 sm:px-10 py-6 border-t"
       style={{ background: "var(--slate-800)", borderColor: "rgba(201,165,92,0.1)" }}
     >
-      {trustItems.map(({ icon, label }) => (
+      {trustItems.map((label, i) => (
         <div
           key={label}
-          className="flex items-center gap-3 text-[13px] font-semibold tracking-[0.04em] uppercase"
-          style={{ color: "rgba(245,242,237,0.6)" }}
+          className="flex items-center gap-2 text-[12px] sm:text-[13px] font-semibold tracking-[0.06em] uppercase"
+          style={{ color: "rgba(245,242,237,0.7)" }}
         >
-          <div
-            className="w-10 h-10 flex items-center justify-center text-base shrink-0"
-            style={{ border: "1px solid rgba(201,165,92,0.25)", color: "var(--accent-gold)" }}
-          >
-            {icon}
-          </div>
+          <span style={{ color: "var(--accent-gold)" }}>|</span>
           {label}
         </div>
       ))}
