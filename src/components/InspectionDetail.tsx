@@ -42,18 +42,15 @@ export default function InspectionDetail() {
           We know what to look for because we&apos;ve built it ourselves.
         </p>
 
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px"
-          style={{ background: "var(--sand)" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {inspectionBlocks.map(({ title, body }, index) => (
             <div
               key={title}
-              className={`p-7${index === inspectionBlocks.length - 1 && inspectionBlocks.length % 3 !== 0 ? " lg:col-span-2" : ""}`}
-              style={{ background: "var(--warm-white)" }}
+              className={`p-7 flex flex-col${index === inspectionBlocks.length - 1 && inspectionBlocks.length % 3 !== 0 ? " lg:col-span-2" : ""}`}
+              style={{ background: "#fff" }}
             >
               <div
-                className="w-6 h-px mb-5"
+                className="w-6 h-[2px] mb-5"
                 style={{ background: "var(--accent-gold)" }}
               />
               <h4 className="font-serif text-lg mb-3" style={{ color: "var(--text-dark)" }}>
