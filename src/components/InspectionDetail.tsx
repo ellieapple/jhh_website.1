@@ -48,7 +48,7 @@ export default function InspectionDetail() {
             <div
               key={title}
               className="p-8"
-              style={{ background: "#fff" }}
+              style={{ background: "var(--warm-white)" }}
             >
               <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}
@@ -66,7 +66,7 @@ export default function InspectionDetail() {
             <div
               key={title}
               className="p-8"
-              style={{ background: "#fff" }}
+              style={{ background: "var(--warm-white)" }}
             >
               <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}

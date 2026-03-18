@@ -18,7 +18,7 @@ export default function ConsultationDetail() {
     <section
       id="consultation"
       className="px-6 sm:px-10 py-20 sm:py-24"
-      style={{ background: "var(--cream)" }}
+      style={{ background: "var(--slate-900)" }}
       aria-labelledby="consultation-heading"
     >
       <div className="max-w-[1100px] mx-auto">
@@ -26,11 +26,11 @@ export default function ConsultationDetail() {
         <h2
           id="consultation-heading"
           className="font-serif mb-4"
-          style={{ fontSize: "clamp(28px,4vw,42px)", color: "var(--text-dark)", lineHeight: 1.15 }}
+          style={{ fontSize: "clamp(28px,4vw,42px)", color: "var(--warm-white)", lineHeight: 1.15 }}
         >
           Pre-design &amp; construction analysis
         </h2>
-        <p className="text-[16px] leading-[1.7] mb-12" style={{ color: "var(--text-mid)", maxWidth: "640px" }}>
+        <p className="text-[16px] leading-[1.7] mb-12" style={{ color: "rgba(245,242,237,0.6)", maxWidth: "640px" }}>
           Strategic guidance from someone who&apos;s actually built it — across every trade.
         </p>
 
@@ -39,12 +39,12 @@ export default function ConsultationDetail() {
             <div
               key={title}
               className="pt-6"
-              style={{ borderTop: "2px solid var(--accent-gold)" }}
+              style={{ borderTop: "1px solid rgba(201,165,92,0.35)" }}
             >
-              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
+              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--warm-white)" }}>
                 {title}
               </h4>
-              <p className="text-sm leading-[1.7]" style={{ color: "var(--text-mid)" }}>
+              <p className="text-sm leading-[1.7]" style={{ color: "rgba(245,242,237,0.55)" }}>
                 {body}
               </p>
             </div>
@@ -52,9 +52,9 @@ export default function ConsultationDetail() {
         </div>
 
         <p
-          className="mt-8 text-[13px] leading-[1.6]"
+          className="mt-10 text-[13px] leading-[1.6]"
           style={{
-            color: "var(--text-mid)",
+            color: "rgba(245,242,237,0.4)",
             borderLeft: "3px solid var(--accent-gold)",
             paddingLeft: "14px",
           }}
