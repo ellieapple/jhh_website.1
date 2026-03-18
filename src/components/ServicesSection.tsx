@@ -6,23 +6,23 @@ import { useModal } from "@/components/providers";
 const services = [
   {
     title: "Residential",
-    image: "/images/home2.jpg",
+    image: "/images/service-residential.png",
     items: ["New Construction", "Kitchens", "Bathrooms", "Flooring", "Windows & Doors"],
   },
   {
     title: "Commercial",
-    image: "/images/living.png",
+    image: "/images/service-commercial.png",
     items: ["Apartment Conversions", "Multi-family", "Mixed Use"],
     cta: "Get Estimate",
   },
   {
     title: "Inspection",
-    image: "/images/bathroom.png",
+    image: "/images/service-inspection.png",
     items: ["Residential & Commercial", "Structural", "Energy Audit", "Radon"],
   },
   {
     title: "Consultation",
-    image: "/images/living.png",
+    image: "/images/service-consultation.png",
     items: ["Pre-design Analysis", "Cost Analysis", "Investment Strategy"],
   },
 ];
