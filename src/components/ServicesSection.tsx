@@ -30,7 +30,7 @@ const services = [
 export default function ServicesSection() {
   const { openModal } = useModal();
   return (
-    <section id="services" className="py-16 sm:py-20" style={{ background: "var(--slate-900)" }}>
+    <section id="services" className="py-16 sm:py-20" style={{ background: "var(--slate-800)" }}>
       <div className="max-w-[1100px] mx-auto px-6 sm:px-10">
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-8 lg:gap-16 items-start">
           {/* Left column - text and CTAs */}
@@ -55,7 +55,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Right column - service cards grid */}
-          <div className="grid grid-cols-2 gap-[2px]" style={{ background: "var(--slate-900)" }}>
+          <div className="grid grid-cols-2 gap-[2px]" style={{ background: "var(--slate-800)" }}>
             {services.map(({ title, image, items, cta }) => (
               <button
                 key={title}
@@ -75,7 +75,7 @@ export default function ServicesSection() {
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: "linear-gradient(to top, rgba(13,22,32,0.97) 30%, rgba(13,22,32,0.56) 100%)",
+                    background: "linear-gradient(to top, rgba(15,25,35,0.95) 30%, rgba(15,25,35,0.5) 100%)",
                   }}
                 />
                 {/* Content */}

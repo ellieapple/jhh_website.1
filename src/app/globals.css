@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --slate-900: #0d1620;
-  --slate-800: #172638;
-  --slate-700: #223347;
-  --slate-600: #30485f;
+  --slate-900: #0d1824;
+  --slate-800: #192a3d;
+  --slate-700: #24374d;
+  --slate-600: #344d65;
   --warm-white: #f5f2ed;
   --cream: #ece7df;
   --sand: #d4cbbf;
