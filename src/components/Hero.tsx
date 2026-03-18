@@ -15,12 +15,12 @@ export default function Hero() {
     >
       {/* Background image */}
       <Image
-        src="/images/hero-living.png"
+        src="/images/hero-swanky.png"
         alt="Modern interior renovation"
         fill
         priority
         className="object-cover"
-        style={{ opacity: 0.3, objectPosition: "center center" }}
+        style={{ opacity: 0.38, objectPosition: "center center" }}
       />
 
       {/* Gradient overlay */}

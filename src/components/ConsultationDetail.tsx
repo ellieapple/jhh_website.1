@@ -18,6 +18,7 @@ export default function ConsultationDetail() {
     <section
       id="consultation"
       className="px-6 sm:px-10 py-20 sm:py-24"
+      style={{ background: "var(--cream)" }}
       aria-labelledby="consultation-heading"
     >
       <div className="max-w-[1100px] mx-auto">
@@ -33,18 +34,18 @@ export default function ConsultationDetail() {
           Strategic guidance from someone who&apos;s actually built it — across every trade.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-px"
+          style={{ background: "var(--sand)" }}
+        >
           {consultationItems.map(({ title, body }) => (
             <div
               key={title}
               className="p-8"
-              style={{
-                background: "var(--white)",
-                border: "1px solid var(--sand)",
-                borderTop: "3px solid var(--accent-gold)",
-              }}
+              style={{ background: "var(--warm-white)" }}
             >
-              <h4 className="font-serif text-xl mb-3" style={{ color: "var(--text-dark)" }}>
+              <div className="w-6 h-px mb-6" style={{ background: "var(--accent-gold)" }} />
+              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
               <p className="text-sm leading-[1.7]" style={{ color: "var(--text-mid)" }}>
