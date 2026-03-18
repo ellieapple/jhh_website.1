@@ -30,7 +30,7 @@ const services = [
 export default function ServicesSection() {
   const { openModal } = useModal();
   return (
-    <section id="services" className="py-16 sm:py-20" style={{ background: "var(--slate-900)" }}>
+    <section id="services" className="py-16 sm:py-20" style={{ background: "var(--slate-800)" }}>
       <div className="max-w-[1100px] mx-auto px-6 sm:px-10">
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-8 lg:gap-16 items-start">
           {/* Left column - text and CTAs */}
