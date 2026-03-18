@@ -28,12 +28,11 @@ export const metadata: Metadata = {
     template: "%s | JHH Contracting Consultants",
   },
   description:
-    "20+ years of hands-on construction experience across HVAC, roofing, siding, framing, and plumbing. Residential & commercial building, home inspection (NACHI certified), and strategic consultation. Serving Greater Philadelphia, Bucks County & New Jersey.",
+    "20+ years of hands-on construction experience across HVAC, roofing, siding, framing, and plumbing. Residential & commercial building, home inspections, and strategic consultation. Serving Greater Philadelphia, Bucks County & New Jersey.",
   keywords: [
     "contractor Pennsylvania",
     "contractor New Jersey",
     "home inspector Bucks County",
-    "NACHI certified inspector",
     "residential construction Philadelphia",
     "commercial construction PA",
     "building consultation",
@@ -54,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "JHH Contracting Consultants",
     title: "JHH Contracting Consultants | Builder & Home Inspector in PA & NJ",
     description:
-      "20+ years of hands-on construction experience. NACHI-certified inspections. Full-scope residential & commercial building. Serving PA & NJ.",
+      "20+ years of hands-on construction experience. Full-scope residential & commercial building and home inspections. Serving PA & NJ.",
     images: [
       {
         url: "/og-image.jpg",
@@ -68,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JHH Contracting Consultants | Builder & Home Inspector in PA & NJ",
     description:
-      "20+ years of hands-on construction experience. NACHI-certified inspections. Serving PA & NJ.",
+      "20+ years of hands-on construction experience. Home inspections & building consultation. Serving PA & NJ.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -97,7 +96,7 @@ const localBusinessJsonLd = {
   "@type": ["GeneralContractor", "HomeAndConstructionBusiness"],
   name: "JHH Contracting Consultants",
   description:
-    "Full-scope residential and commercial construction, NACHI-certified home inspections, and building consultation services.",
+    "Full-scope residential and commercial construction, home inspections, and building consultation services.",
   url: SITE_URL,
   telephone: "+12675667725",
   priceRange: "$$",
@@ -118,7 +117,6 @@ const localBusinessJsonLd = {
     ],
   },
   knowsAbout: ["HVAC", "Roofing", "Siding", "Framing", "Plumbing", "Concrete", "Foundations"],
-  award: "NACHI Certified Home Inspector",
   foundingDate: "2004",
 };
 
