@@ -46,10 +46,10 @@ export default function InspectionDetail() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px"
           style={{ background: "var(--sand)" }}
         >
-          {inspectionBlocks.map(({ title, body }) => (
+          {inspectionBlocks.map(({ title, body }, index) => (
             <div
               key={title}
-              className="p-7"
+              className={`p-7${index === inspectionBlocks.length - 1 && inspectionBlocks.length % 3 !== 0 ? " lg:col-span-2" : ""}`}
               style={{ background: "var(--warm-white)" }}
             >
               <div
