@@ -1,23 +1,23 @@
-const inspectionCategories = [
+const inspectionBlocks = [
   {
     title: "Older Homes",
-    items: ["Structural", "Energy efficiency", "Pre-purchase"],
+    body: "Structural integrity, energy efficiency, and pre-purchase inspections. We know what to look for because we've built it ourselves.",
   },
   {
     title: "New Homes",
-    items: ["Construction oversight", "Systems", "Pre-purchase"],
+    body: "Construction oversight, OSHA-qualified evaluation, systems operation documentation, and pre-purchase inspections.",
   },
   {
-    title: "Energy Audit",
-    items: ["Energy usage", "Efficiency analysis"],
+    title: "Energy Audits",
+    body: "Energy usage, efficiency analysis, carbon footprint assessment, and operational expense evaluation.",
   },
   {
     title: "Multi-Family",
-    items: ["Maintenance costs", "Safety", "Structural", "Mechanical / Electrical"],
+    body: "Maintenance costs, safety issues, structural integrity, and mechanical & electrical independence of each unit.",
   },
   {
-    title: "Commercial / Industrial",
-    items: ["Maintenance costs", "Safety", "Structural"],
+    title: "Commercial & Industrial",
+    body: "Factories, office buildings, and other structures — maintenance costs, safety issues, and structural integrity assessments.",
   },
 ];
 
@@ -30,46 +30,48 @@ export default function InspectionDetail() {
       aria-labelledby="inspections-heading"
     >
       <div className="max-w-[1100px] mx-auto">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20 items-start">
-          {/* Left: heading */}
-          <div className="lg:sticky lg:top-32">
-            <span className="section-label">Inspection Services</span>
-            <h2
-              id="inspections-heading"
-              className="font-serif mb-5"
-              style={{ fontSize: "clamp(28px,4vw,42px)", color: "var(--text-dark)", lineHeight: 1.1 }}
-            >
-              Backed by hands-on construction experience
-            </h2>
-            <p className="text-[15px] leading-[1.7] mb-6" style={{ color: "var(--text-mid)" }}>
-              We know what to look for because we&apos;ve built it ourselves.
-            </p>
-            <p className="text-[13px] leading-[1.6]" style={{ color: "var(--text-mid)", borderLeft: "2px solid var(--accent-gold)", paddingLeft: "14px" }}>
-              We provide a full, comprehensive report.
-            </p>
-          </div>
+        <span className="section-label">Inspection Services</span>
+        <h2
+          id="inspections-heading"
+          className="font-serif mb-5"
+          style={{ fontSize: "clamp(28px,4vw,42px)", color: "var(--text-dark)", lineHeight: 1.1 }}
+        >
+          Backed by hands-on construction experience
+        </h2>
+        <p className="text-[15px] leading-[1.7] mb-12" style={{ color: "var(--text-mid)", maxWidth: "560px" }}>
+          We know what to look for because we&apos;ve built it ourselves.
+        </p>
 
-          {/* Right: category rows */}
-          <div className="flex flex-col" style={{ borderTop: "1px solid var(--sand)" }}>
-            {inspectionCategories.map(({ title, items }) => (
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px"
+          style={{ background: "var(--sand)" }}
+        >
+          {inspectionBlocks.map(({ title, body }) => (
+            <div
+              key={title}
+              className="p-7"
+              style={{ background: "var(--warm-white)" }}
+            >
               <div
-                key={title}
-                className="py-5 flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-0"
-                style={{ borderBottom: "1px solid var(--sand)" }}
-              >
-                <div
-                  className="text-[11px] font-bold tracking-[0.1em] uppercase shrink-0 sm:w-52"
-                  style={{ color: "var(--text-dark)" }}
-                >
-                  {title}
-                </div>
-                <div className="text-[14px]" style={{ color: "var(--text-mid)" }}>
-                  {items.join(" · ")}
-                </div>
-              </div>
-            ))}
-          </div>
+                className="w-6 h-px mb-5"
+                style={{ background: "var(--accent-gold)" }}
+              />
+              <h4 className="font-serif text-lg mb-3" style={{ color: "var(--text-dark)" }}>
+                {title}
+              </h4>
+              <p className="text-sm leading-[1.75]" style={{ color: "var(--text-mid)" }}>
+                {body}
+              </p>
+            </div>
+          ))}
         </div>
+
+        <p
+          className="mt-8 text-[13px]"
+          style={{ color: "var(--text-mid)", borderLeft: "2px solid var(--accent-gold)", paddingLeft: "14px" }}
+        >
+          We provide a full, comprehensive report.
+        </p>
       </div>
     </section>
   );
