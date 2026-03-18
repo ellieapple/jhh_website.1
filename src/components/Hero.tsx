@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useModal } from "@/components/providers";
 import { PHONE_DISPLAY, PHONE_HREF, STATES_BADGE } from "@/lib/constants";
 
@@ -9,39 +10,36 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-end overflow-hidden"
-      style={{ minHeight: "100svh", paddingTop: "97px", background: "var(--slate-900)" }}
+      className="relative flex items-center overflow-hidden"
+      style={{ minHeight: "85vh", marginTop: "97px", background: "var(--slate-900)" }}
     >
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.4 }}
-        aria-hidden="true"
-      >
-        <source src="/videos/jla-hero-final.mp4" type="video/mp4" />
-      </video>
+      {/* Background image */}
+      <Image
+        src="/images/home1.jpg"
+        alt="Custom home exterior"
+        fill
+        priority
+        className="object-cover"
+        style={{ opacity: 0.35 }}
+      />
 
-      {/* Gradient overlay — dark at bottom so text is always readable */}
+      {/* Gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to top, rgba(15,25,35,0.97) 0%, rgba(15,25,35,0.6) 45%, rgba(15,25,35,0.25) 100%)",
+            "linear-gradient(135deg, rgba(15,25,35,0.92) 0%, rgba(15,25,35,0.6) 50%, rgba(15,25,35,0.85) 100%)",
         }}
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-4xl px-6 sm:px-10 pb-16 sm:pb-24">
+      <div className="relative z-10 w-full max-w-[720px] px-6 sm:px-10 py-14 sm:py-16">
         {/* Badge */}
         <div
-          className="animate-fade-up-1 inline-flex items-center gap-2 px-3.5 py-1.5 mb-6 text-[11px] font-bold tracking-[0.12em] uppercase"
+          className="animate-fade-up-1 inline-flex items-center gap-2 px-4 py-2 mb-7 text-[11px] font-bold tracking-[0.12em] uppercase"
           style={{
-            background: "rgba(201,165,92,0.1)",
-            border: "1px solid rgba(201,165,92,0.3)",
+            background: "rgba(201,165,92,0.12)",
+            border: "1px solid rgba(201,165,92,0.25)",
             color: "var(--accent-gold)",
           }}
         >
@@ -52,32 +50,27 @@ export default function Hero() {
         {/* Headline */}
         <h1
           className="animate-fade-up-2 font-serif leading-[1.08] mb-5"
-          style={{ fontSize: "clamp(38px, 6vw, 72px)", color: "var(--warm-white)" }}
+          style={{ fontSize: "clamp(36px, 5.5vw, 62px)", color: "var(--warm-white)", letterSpacing: "-0.01em" }}
         >
-          JHH Contracting{" "}
-          <em style={{ fontStyle: "italic", color: "var(--accent-gold)" }}>Consultants</em>
+          Your Area&apos;s Premier Builder{" "}
+          <em style={{ fontStyle: "italic", color: "var(--accent-gold)" }}>&amp; Building</em> Consultant
         </h1>
 
         {/* Sub */}
         <p
-          className="animate-fade-up-3 text-base sm:text-lg leading-relaxed mb-3 max-w-xl"
-          style={{ color: "rgba(245,242,237,0.75)" }}
+          className="animate-fade-up-3 text-[17px] leading-[1.7] mb-9 max-w-[520px]"
+          style={{ color: "rgba(245,242,237,0.7)" }}
         >
-          20+ Years of Hands-On Construction Experience.
-        </p>
-        <p
-          className="animate-fade-up-3 text-sm mb-8"
-          style={{ color: "rgba(245,242,237,0.45)" }}
-        >
-          Residential&nbsp;&bull;&nbsp;Commercial&nbsp;&bull;&nbsp;Inspection&nbsp;&bull;&nbsp;Consultation
+          20+ years of hands-on experience across HVAC, roofing, siding, framing, and plumbing. 
+          From ground-up construction to home renovations — we understand how the entire system works together.
         </p>
 
         {/* CTAs */}
-        <div className="animate-fade-up-4 flex flex-col sm:flex-row gap-3">
-          <button onClick={openModal} className="btn-primary justify-center">
-            Get Free Estimate
+        <div className="animate-fade-up-4 flex flex-wrap gap-3.5">
+          <button onClick={openModal} className="btn-primary">
+            Get Free Estimate &rarr;
           </button>
-          <a href="#work" className="btn-secondary justify-center">
+          <a href="#work" className="btn-secondary">
             View Our Work
           </a>
         </div>
@@ -85,10 +78,10 @@ export default function Hero() {
         {/* Phone */}
         <a
           href={PHONE_HREF}
-          className="mt-6 inline-flex items-center gap-1.5 text-sm transition-colors no-underline"
-          style={{ color: "rgba(245,242,237,0.45)" }}
+          className="animate-fade-up-4 mt-6 inline-flex items-center gap-2 text-sm font-medium transition-colors no-underline"
+          style={{ color: "rgba(245,242,237,0.5)" }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-gold)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,242,237,0.45)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,242,237,0.5)")}
         >
           &#9742; {PHONE_DISPLAY}
         </a>

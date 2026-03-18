@@ -18,16 +18,16 @@ const features = [
     href: "#contact",
   },
   {
-    icon: "✕",
-    title: "Multi-Trade Expertise",
-    desc: "Experts in HVAC, roofing, siding, framing, plumbing, and radon — all under one roof.",
+    icon: "✓",
+    title: "Quality Guarantee",
+    desc: "100% satisfaction guarantee on all our building services. We stand behind every project.",
     cta: "Schedule Inspection",
     href: "#inspections",
   },
   {
     icon: "◆",
-    title: "Quality Guarantee",
-    desc: "100% satisfaction guarantee on all our building services. We stand behind every project.",
+    title: "Premium Materials",
+    desc: "We use only the finest building materials and installation practices.",
     cta: "Book Consult",
     href: "#consultation",
   },
@@ -35,17 +35,17 @@ const features = [
 
 export default function WhySection() {
   return (
-    <section id="why" className="py-20 px-6 sm:px-10 max-w-5xl mx-auto">
+    <section id="why" className="py-20 px-6 sm:px-10 max-w-[1100px] mx-auto">
       <span className="section-label">Why Choose JHH</span>
       <h2
         className="font-serif leading-[1.15] mb-4"
         style={{ fontSize: "clamp(28px,4vw,42px)", color: "var(--text-dark)" }}
       >
-        Why Choose JHH Contracting Consultants?
+        We don&apos;t just build —<br />we understand the whole system
       </h2>
-      <p className="text-base leading-relaxed max-w-2xl mb-10" style={{ color: "var(--text-mid)" }}>
-        We combine decades of expertise, the latest technology, and modern building techniques to deliver
-        exceptional finished products for your home or business construction needs.
+      <p className="text-base leading-[1.7] max-w-[640px] mb-12" style={{ color: "var(--text-mid)" }}>
+        We combine decades of hands-on expertise, the latest technology, and modern building techniques 
+        to deliver an exceptional finished product for your home or business construction needs.
       </p>
 
       {/* Trade tags */}
@@ -67,43 +67,41 @@ export default function WhySection() {
         style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", background: "var(--sand)" }}
       >
         {features.map(({ icon, title, desc, cta, href }) => (
-          <div
+          <a
             key={title}
-            className="group p-8 transition-all duration-300"
-            style={{ background: "#fff" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLDivElement).style.background = "var(--slate-900)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLDivElement).style.background = "#fff")}
+            href={href}
+            className="group block p-9 transition-all duration-300 no-underline"
+            style={{ background: "var(--white)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--slate-900)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "var(--white)")}
           >
             <div
-              className="w-10 h-10 flex items-center justify-center text-lg mb-5"
+              className="w-11 h-11 flex items-center justify-center text-xl mb-5 transition-colors duration-300"
               style={{ border: "1px solid var(--sand)", color: "var(--accent-gold)" }}
             >
               {icon}
             </div>
             <div
-              className="fc-title font-serif text-xl mb-2.5 transition-colors duration-300"
+              className="font-serif text-xl mb-2.5 transition-colors duration-300 group-hover:text-[var(--accent-gold)]"
               style={{ color: "var(--text-dark)" }}
-              onMouseOver={(e) => (e.currentTarget.style.color = "var(--accent-gold)")}
             >
               {title}
             </div>
             <div
-              className="text-sm leading-relaxed mb-5 transition-colors duration-300"
+              className="text-sm leading-[1.65] mb-5 transition-colors duration-300 group-hover:text-[rgba(245,242,237,0.7)]"
               style={{ color: "var(--text-mid)" }}
             >
               {desc}
             </div>
-            <a
-              href={href}
-              className="text-[11px] font-bold tracking-[0.1em] uppercase no-underline transition-colors"
+            <span
+              className="text-[11px] font-bold tracking-[0.1em] uppercase transition-colors"
               style={{ color: "var(--accent-gold)" }}
             >
               {cta} &rsaquo;
-            </a>
-          </div>
+            </span>
+          </a>
         ))}
       </div>
     </section>
   );
 }
-

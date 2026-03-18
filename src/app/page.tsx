@@ -5,7 +5,6 @@ import TrustBar from "@/components/TrustBar";
 import WhySection from "@/components/WhySection";
 import CtaBanner from "@/components/CtaBanner";
 import ServicesSection from "@/components/ServicesSection";
-import ProjectStrip from "@/components/ProjectStrip";
 import InspectionDetail from "@/components/InspectionDetail";
 import ConsultationDetail from "@/components/ConsultationDetail";
 import FinalCta from "@/components/FinalCta";
@@ -22,7 +21,6 @@ export default function Home() {
       <WhySection />
       <CtaBanner />
       <ServicesSection />
-      <ProjectStrip />
       <InspectionDetail />
       <ConsultationDetail />
       <FinalCta />
