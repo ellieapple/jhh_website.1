@@ -6,7 +6,7 @@ import { useModal } from "@/components/providers";
 const services = [
   {
     title: "Residential",
-    image: "/images/kitchen.png",
+    image: "/images/home2.jpg",
     items: ["New Construction", "Kitchens", "Bathrooms", "Flooring", "Windows & Doors"],
   },
   {
@@ -22,7 +22,7 @@ const services = [
   },
   {
     title: "Consultation",
-    image: "/images/home2.jpg",
+    image: "/images/living.png",
     items: ["Pre-design Analysis", "Cost Analysis", "Investment Strategy"],
   },
 ];
