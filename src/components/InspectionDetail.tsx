@@ -43,11 +43,12 @@ export default function InspectionDetail() {
         </p>
 
         {/* Top row: 3 cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px mb-px" style={{ background: "var(--sand)" }}>
           {inspectionBlocks.slice(0, 3).map(({ title, body }) => (
             <div
               key={title}
-              className="card-light group relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(32,27,20,0.1)]"
+              className="p-8"
+              style={{ background: "#fff" }}
             >
               <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}
@@ -60,11 +61,12 @@ export default function InspectionDetail() {
         </div>
 
         {/* Bottom row: 2 wider cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px" style={{ background: "var(--sand)" }}>
           {inspectionBlocks.slice(3).map(({ title, body }) => (
             <div
               key={title}
-              className="card-light group relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(32,27,20,0.1)]"
+              className="p-8"
+              style={{ background: "#fff" }}
             >
               <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}

@@ -34,17 +34,13 @@ export default function ConsultationDetail() {
           Strategic guidance from someone who&apos;s actually built it — across every trade.
         </p>
 
-        <div
-          className="grid grid-cols-1 sm:grid-cols-3 gap-px"
-          style={{ background: "var(--sand)" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
           {consultationItems.map(({ title, body }) => (
             <div
               key={title}
-              className="p-8"
-              style={{ background: "var(--warm-white)" }}
+              className="pt-6"
+              style={{ borderTop: "2px solid var(--accent-gold)" }}
             >
-              <div className="w-6 h-px mb-6" style={{ background: "var(--accent-gold)" }} />
               <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>

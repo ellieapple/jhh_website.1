@@ -15,7 +15,7 @@ export default function Hero() {
     >
       {/* Background image */}
       <Image
-        src="/images/hero-swanky.png"
+        src="/images/hero-outsidewindow.png"
         alt="Modern interior renovation"
         fill
         priority
