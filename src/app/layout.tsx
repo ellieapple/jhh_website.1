@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Plus_Jakarta_Sans } from "next/font/google";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -129,7 +130,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Analytics />
+        {children}
+      </body>
     </html>
   );
 }
