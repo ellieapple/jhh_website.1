@@ -89,19 +89,33 @@ export default function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
   const handleSubmit = async () => {
     if (!validate(3)) return;
     setSubmitting(true);
-    // ---------------------------------------------------------------------------
-    // Replace this block with your actual form submission (e.g. email API,
-    // Formspree, Resend, etc.). The endpoint below is a placeholder.
-    // ---------------------------------------------------------------------------
     try {
-      await new Promise((r) => setTimeout(r, 800)); // simulated network delay
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          phone: form.phone,
+          fullname: form.fullname,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        const msg = (data as { error?: string }).error ?? "Something went wrong. Please call us directly.";
+        setErrors({ message: msg });
+        return;
+      }
+
       handleClose();
-      // Show success — in a real app you'd trigger a toast or redirect
       window.dispatchEvent(
         new CustomEvent("jhh:toast", {
           detail: "Message sent! We'll be in touch within 24 hours.",
         })
       );
+    } catch {
+      setErrors({ message: "Network error. Please call us directly at (267) 566-7725." });
     } finally {
       setSubmitting(false);
     }
