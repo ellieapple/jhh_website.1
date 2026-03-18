@@ -25,7 +25,7 @@ export default function InspectionDetail() {
   return (
     <section
       id="inspections"
-      className="px-6 sm:px-10 py-20"
+      className="px-6 sm:px-10 py-16"
       style={{ background: "var(--cream)" }}
       aria-labelledby="inspections-heading"
     >
