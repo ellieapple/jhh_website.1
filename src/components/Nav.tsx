@@ -1,20 +1,19 @@
 "use client";
 
 import { useState } from "react";
-
-interface NavProps {
-  onOpenModal: () => void;
-}
+import { useModal } from "@/components/providers";
+import { COMPANY_NAME, TAGLINE } from "@/lib/constants";
 
 const navLinks = [
-  { label: "Residential", href: "#services" },
-  { label: "Commercial", href: "#services" },
-  { label: "Inspection", href: "#inspections" },
+  { label: "Residential",  href: "#services" },
+  { label: "Commercial",   href: "#services" },
+  { label: "Inspection",   href: "#inspections" },
   { label: "Consultation", href: "#consultation" },
-  { label: "Reviews", href: "#", disabled: true },
+  { label: "Our Work",     href: "#work" },
 ];
 
-export default function Nav({ onOpenModal }: NavProps) {
+export default function Nav() {
+  const { openModal } = useModal();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -32,32 +31,19 @@ export default function Nav({ onOpenModal }: NavProps) {
         }}
       >
         {/* Brand */}
-        <a href="#hero" className="flex items-center gap-3.5 no-underline">
+        <a href="#hero" className="flex items-center gap-3 no-underline">
           <div
-            className="w-11 h-11 flex items-center justify-center text-base"
-            style={{
-              background: "var(--accent-gold)",
-              color: "var(--slate-900)",
-              fontFamily: "var(--font-dm-serif)",
-            }}
+            className="w-10 h-10 flex items-center justify-center text-sm font-bold"
+            style={{ background: "var(--accent-gold)", color: "var(--slate-900)", fontFamily: "var(--font-dm-serif)" }}
           >
             JHH
           </div>
           <div>
-            <div
-              className="text-[17px] tracking-wide leading-tight"
-              style={{
-                color: "var(--warm-white)",
-                fontFamily: "var(--font-dm-serif)",
-              }}
-            >
-              JHH Contracting Consultants
+            <div className="font-serif text-[14px] sm:text-[16px] leading-tight" style={{ color: "var(--warm-white)" }}>
+              {COMPANY_NAME}
             </div>
-            <div
-              className="text-[10px] font-semibold tracking-[0.14em] uppercase mt-0.5"
-              style={{ color: "var(--accent-gold)" }}
-            >
-              Build · Inspect · Consult
+            <div className="text-[10px] font-bold tracking-[0.14em] uppercase mt-0.5" style={{ color: "var(--accent-gold)" }}>
+              {TAGLINE}
             </div>
           </div>
         </a>
@@ -104,61 +90,37 @@ export default function Nav({ onOpenModal }: NavProps) {
         onClick={closeMenu}
       />
 
-      {/* SLIDE-IN MENU */}
+      {/* DRAWER */}
       <div
-        className="fixed top-0 z-50 w-80 h-full flex flex-col pt-24 px-10 pb-10 gap-0 transition-all duration-[400ms]"
+        className="fixed top-0 right-0 z-50 w-72 h-full flex flex-col pt-24 px-8 pb-10 transition-transform duration-[400ms]"
         style={{
-          right: menuOpen ? "0" : "-320px",
           background: "var(--slate-800)",
-          transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+          transform: menuOpen ? "translateX(0)" : "translateX(100%)",
+          transitionTimingFunction: "cubic-bezier(0.16,1,0.3,1)",
         }}
       >
-        {navLinks.map(({ label, href, disabled }) => (
+        {navLinks.map(({ label, href }) => (
           <a
             key={label}
-            href={disabled ? undefined : href}
-            onClick={disabled ? undefined : closeMenu}
-            className="py-4 text-lg font-medium no-underline border-b transition-colors duration-200"
-            style={{
-              color: disabled ? "rgba(245,242,237,0.4)" : "var(--warm-white)",
-              borderColor: "rgba(255,255,255,0.06)",
-              cursor: disabled ? "default" : "pointer",
-            }}
-            onMouseEnter={(e) => {
-              if (!disabled)
-                (e.currentTarget as HTMLAnchorElement).style.color =
-                  "var(--accent-gold)";
-            }}
-            onMouseLeave={(e) => {
-              if (!disabled)
-                (e.currentTarget as HTMLAnchorElement).style.color =
-                  "var(--warm-white)";
-            }}
+            href={href}
+            onClick={closeMenu}
+            className="py-4 text-base font-medium no-underline border-b transition-colors duration-200"
+            style={{ color: "var(--warm-white)", borderColor: "rgba(255,255,255,0.06)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-gold)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--warm-white)")}
           >
             {label}
           </a>
         ))}
-        <a
-          href="#"
-          className="py-4 text-lg font-medium no-underline border-b transition-colors duration-200"
-          style={{
-            color: "var(--warm-white)",
-            borderColor: "rgba(255,255,255,0.06)",
-          }}
-          onClick={(e) => {
-            e.preventDefault();
-            closeMenu();
-            onOpenModal();
-          }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.color = "var(--accent-gold)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.color = "var(--warm-white)")
-          }
+        <button
+          onClick={() => { closeMenu(); openModal(); }}
+          className="py-4 text-base font-medium text-left bg-transparent border-none border-b cursor-pointer transition-colors duration-200"
+          style={{ color: "var(--warm-white)", borderColor: "rgba(255,255,255,0.06)", fontFamily: "inherit" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-gold)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--warm-white)")}
         >
           Contact Us
-        </a>
+        </button>
       </div>
     </>
   );

@@ -1,11 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-interface CallbackModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { useModal, useToast } from "@/components/providers";
 
 type FormData = {
   phone: string;
@@ -23,7 +19,9 @@ const EMPTY: FormData = {
   file: null,
 };
 
-export default function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
+export default function CallbackModal() {
+  const { isOpen, closeModal } = useModal();
+  const { showToast } = useToast();
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
@@ -51,7 +49,7 @@ export default function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
   }, [isOpen]);
 
   const handleClose = () => {
-    onClose();
+    closeModal();
     setTimeout(() => {
       setStep(1);
       setForm(EMPTY);
@@ -109,11 +107,7 @@ export default function CallbackModal({ isOpen, onClose }: CallbackModalProps) {
       }
 
       handleClose();
-      window.dispatchEvent(
-        new CustomEvent("jhh:toast", {
-          detail: "Message sent! We'll be in touch within 24 hours.",
-        })
-      );
+      showToast("Message sent! We'll be in touch within 24 hours.");
     } catch {
       setErrors({ message: "Network error. Please call us directly at (267) 566-7725." });
     } finally {

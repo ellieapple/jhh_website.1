@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Plus_Jakarta_Sans } from "next/font/google";
 import Analytics from "@/components/Analytics";
+import { ModalProvider, ToastProvider } from "@/components/providers";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -132,7 +133,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <Analytics />
-        {children}
+        <ModalProvider>
+          <ToastProvider>
+            {children}
+          </ToastProvider>
+        </ModalProvider>
       </body>
     </html>
   );
