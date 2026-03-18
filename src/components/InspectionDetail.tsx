@@ -1,3 +1,5 @@
+"use client";
+
 const inspectionBlocks = [
   {
     title: "Older Homes",
@@ -38,25 +40,60 @@ export default function InspectionDetail() {
         >
           Backed by hands-on construction experience
         </h2>
-        <p className="text-[15px] leading-[1.7] mb-12" style={{ color: "var(--text-mid)", maxWidth: "560px" }}>
+        <p className="text-[15px] leading-[1.7] mb-14" style={{ color: "var(--text-mid)", maxWidth: "560px" }}>
           We know what to look for because we&apos;ve built it ourselves.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {inspectionBlocks.map(({ title, body }, index) => (
+        {/* Top row: 3 cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+          {inspectionBlocks.slice(0, 3).map(({ title, body }) => (
             <div
               key={title}
-              className={`p-7 flex flex-col${index === inspectionBlocks.length - 1 && inspectionBlocks.length % 3 !== 0 ? " lg:col-span-2" : ""}`}
-              style={{ background: "#fff" }}
+              className="group relative p-8 transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: "#fff",
+                borderTop: "3px solid var(--accent-gold)",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)";
+              }}
             >
-              <div
-                className="w-6 h-[2px] mb-5"
-                style={{ background: "var(--accent-gold)" }}
-              />
-              <h4 className="font-serif text-lg mb-3" style={{ color: "var(--text-dark)" }}>
+              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
-              <p className="text-sm leading-[1.75]" style={{ color: "var(--text-mid)" }}>
+              <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
+                {body}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom row: 2 wider cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {inspectionBlocks.slice(3).map(({ title, body }) => (
+            <div
+              key={title}
+              className="group relative p-8 transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: "#fff",
+                borderTop: "3px solid var(--accent-gold)",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)";
+              }}
+            >
+              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
+                {title}
+              </h4>
+              <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
                 {body}
               </p>
             </div>
@@ -64,7 +101,7 @@ export default function InspectionDetail() {
         </div>
 
         <p
-          className="mt-8 text-[13px]"
+          className="mt-10 text-[13px]"
           style={{ color: "var(--text-mid)", borderLeft: "2px solid var(--accent-gold)", paddingLeft: "14px" }}
         >
           We provide a full, comprehensive report.
