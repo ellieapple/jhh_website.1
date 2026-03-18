@@ -21,10 +21,10 @@ export default function FinalCta() {
       </p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <button onClick={openModal} className="btn-primary justify-center">
-          Contact Us &rarr;
+          Contact Us
         </button>
         <a href={PHONE_HREF} className="btn-secondary justify-center">
-          &#9742; {PHONE_DISPLAY}
+          Call {PHONE_DISPLAY}
         </a>
       </div>
     </section>

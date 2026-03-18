@@ -102,16 +102,16 @@ export default function ServicesSection() {
                       className="text-[11px] font-bold tracking-[0.08em] uppercase mt-auto"
                       style={{ color: "var(--accent-gold)" }}
                     >
-                      {cta} &rsaquo;
+                      {cta}
                     </span>
                   )}
                 </div>
                 {/* Hover arrow */}
                 <span
-                  className="absolute bottom-4 right-4 text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute bottom-4 right-4 text-[11px] font-bold tracking-[0.08em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ color: "var(--accent-gold)" }}
                 >
-                  →
+                  Open
                 </span>
               </button>
             ))}

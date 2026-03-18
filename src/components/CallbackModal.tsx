@@ -219,7 +219,7 @@ export default function CallbackModal() {
               </Field>
               <Actions>
                 <span />
-                <NextBtn onClick={nextStep}>Next →</NextBtn>
+                <NextBtn onClick={nextStep}>Next</NextBtn>
               </Actions>
             </>
           )}
@@ -263,8 +263,8 @@ export default function CallbackModal() {
                 />
               </Field>
               <Actions>
-                <BackBtn onClick={prevStep}>← Back</BackBtn>
-                <NextBtn onClick={nextStep}>Next →</NextBtn>
+                <BackBtn onClick={prevStep}>Back</BackBtn>
+                <NextBtn onClick={nextStep}>Next</NextBtn>
               </Actions>
             </>
           )}
@@ -324,9 +324,9 @@ export default function CallbackModal() {
                 </label>
               </Field>
               <Actions>
-                <BackBtn onClick={prevStep}>← Back</BackBtn>
+                <BackBtn onClick={prevStep}>Back</BackBtn>
                 <NextBtn onClick={handleSubmit} disabled={submitting}>
-                  {submitting ? "Sending..." : "Send Message →"}
+                  {submitting ? "Sending..." : "Send Message"}
                 </NextBtn>
               </Actions>
             </>

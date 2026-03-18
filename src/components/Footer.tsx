@@ -30,7 +30,7 @@ export default function Footer() {
         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-gold)")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,242,237,0.4)")}
       >
-        &#9742; {PHONE_DISPLAY}
+        Call {PHONE_DISPLAY}
       </a>
 
       <nav className="flex justify-center flex-wrap gap-6 mt-6" aria-label="Footer navigation">

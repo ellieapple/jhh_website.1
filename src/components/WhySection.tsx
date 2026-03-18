@@ -84,7 +84,7 @@ export default function WhySection() {
               className="text-[11px] font-bold tracking-[0.1em] uppercase"
               style={{ color: "var(--accent-gold)" }}
             >
-              {cta} &rsaquo;
+              {cta}
             </span>
           </a>
         ))}
