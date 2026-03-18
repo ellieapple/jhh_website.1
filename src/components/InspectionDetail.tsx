@@ -1,5 +1,3 @@
-"use client";
-
 const inspectionBlocks = [
   {
     title: "Older Homes",
@@ -46,23 +44,18 @@ export default function InspectionDetail() {
 
         {/* Top row: 3 cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
-          {inspectionBlocks.slice(0, 3).map(({ title, body }) => (
+          {inspectionBlocks.slice(0, 3).map(({ title, body }, index) => (
             <div
               key={title}
-              className="group relative p-8 transition-all duration-300 hover:-translate-y-1"
-              style={{
-                background: "#fff",
-                borderTop: "3px solid var(--accent-gold)",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)";
-              }}
+              className="card-light group relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(32,27,20,0.1)]"
             >
-              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
+              <span
+                className="absolute top-4 right-5 text-[10px] font-bold tracking-[0.14em] uppercase"
+                style={{ color: "rgba(74,74,74,0.45)" }}
+              >
+                0{index + 1}
+              </span>
+              <h4 className="font-serif text-[19px] mb-3 pr-8" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
               <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
@@ -74,23 +67,18 @@ export default function InspectionDetail() {
 
         {/* Bottom row: 2 wider cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {inspectionBlocks.slice(3).map(({ title, body }) => (
+          {inspectionBlocks.slice(3).map(({ title, body }, index) => (
             <div
               key={title}
-              className="group relative p-8 transition-all duration-300 hover:-translate-y-1"
-              style={{
-                background: "#fff",
-                borderTop: "3px solid var(--accent-gold)",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)";
-              }}
+              className="card-light group relative p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_42px_rgba(32,27,20,0.1)]"
             >
-              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
+              <span
+                className="absolute top-4 right-5 text-[10px] font-bold tracking-[0.14em] uppercase"
+                style={{ color: "rgba(74,74,74,0.45)" }}
+              >
+                0{index + 4}
+              </span>
+              <h4 className="font-serif text-[19px] mb-3 pr-8" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
               <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
