@@ -41,10 +41,10 @@ export default function ConsultationDetail() {
               className="pt-6"
               style={{ borderTop: "1px solid rgba(201,165,92,0.35)" }}
             >
-              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--warm-white)" }}>
+              <h4 className="font-serif text-lg mb-2" style={{ color: "var(--warm-white)" }}>
                 {title}
               </h4>
-              <p className="text-sm leading-[1.7]" style={{ color: "rgba(245,242,237,0.55)" }}>
+              <p className="text-[13px] leading-[1.75]" style={{ color: "rgba(245,242,237,0.55)" }}>
                 {body}
               </p>
             </div>

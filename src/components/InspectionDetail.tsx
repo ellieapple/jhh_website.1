@@ -47,17 +47,17 @@ export default function InspectionDetail() {
           {inspectionBlocks.slice(0, 3).map(({ title, body }) => (
             <div
               key={title}
-              className="p-8"
+              className="p-6"
               style={{
                 background: "var(--warm-white)",
                 border: "1px solid var(--sand)",
-                borderTop: "3px solid var(--accent-gold)",
+                borderTop: "2px solid var(--accent-gold)",
               }}
             >
-              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
+              <h4 className="font-serif text-lg mb-2" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
-              <p className="text-[14px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
+              <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
                 {body}
               </p>
             </div>
@@ -69,17 +69,17 @@ export default function InspectionDetail() {
           {inspectionBlocks.slice(3).map(({ title, body }) => (
             <div
               key={title}
-              className="p-8"
+              className="p-6"
               style={{
                 background: "var(--warm-white)",
                 border: "1px solid var(--sand)",
-                borderTop: "3px solid var(--accent-gold)",
+                borderTop: "2px solid var(--accent-gold)",
               }}
             >
-              <h4 className="font-serif text-[19px] mb-3" style={{ color: "var(--text-dark)" }}>
+              <h4 className="font-serif text-lg mb-2" style={{ color: "var(--text-dark)" }}>
                 {title}
               </h4>
-              <p className="text-[14px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
+              <p className="text-[13px] leading-[1.8]" style={{ color: "var(--text-mid)" }}>
                 {body}
               </p>
             </div>
