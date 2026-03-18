@@ -17,7 +17,7 @@ export default function ConsultationDetail() {
   return (
     <section
       id="consultation"
-      className="px-6 sm:px-10 py-20 sm:py-24"
+      className="px-6 sm:px-10 py-20"
       style={{ background: "var(--slate-900)" }}
       aria-labelledby="consultation-heading"
     >
