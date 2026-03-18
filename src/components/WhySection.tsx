@@ -39,13 +39,12 @@ export default function WhySection() {
       >
         We don&apos;t just build —<br />we understand the whole system
       </h2>
-      <p className="text-base leading-[1.7] max-w-[640px] mb-12" style={{ color: "var(--text-mid)" }}>
-        We combine decades of hands-on expertise, the latest technology, and modern building techniques 
-        to deliver an exceptional finished product for your home or business construction needs.
+      <p className="text-base leading-[1.7] max-w-[580px] mb-10" style={{ color: "var(--text-mid)" }}>
+        45+ years of hands-on expertise across every trade means we catch what others miss — and build what others can&apos;t.
       </p>
 
       {/* Trade tags */}
-      <div className="flex flex-wrap gap-2 mb-12">
+      <div className="flex flex-wrap gap-2 mb-14">
         {TRADES.map((t) => (
           <span
             key={t}
@@ -57,34 +56,32 @@ export default function WhySection() {
         ))}
       </div>
 
-      {/* Feature cards */}
-      <div
-        className="grid gap-[2px]"
-        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", background: "var(--sand)" }}
-      >
+      {/* Feature rows — no boxes */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {features.map(({ title, desc, cta, href }) => (
           <a
             key={title}
             href={href}
-            className="group block p-8 transition-all duration-300 no-underline"
-            style={{ background: "var(--white)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--slate-900)")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "var(--white)")}
+            className="group block no-underline"
           >
             <div
-              className="font-serif text-xl mb-2.5 transition-colors duration-300 group-hover:text-[var(--accent-gold)]"
+              className="w-8 h-[2px] mb-5 transition-all duration-300 group-hover:w-12"
+              style={{ background: "var(--accent-gold)" }}
+            />
+            <div
+              className="font-serif text-lg mb-2 transition-colors duration-300 group-hover:text-[var(--accent-gold)]"
               style={{ color: "var(--text-dark)" }}
             >
               {title}
             </div>
             <div
-              className="text-sm leading-[1.65] mb-5 transition-colors duration-300 group-hover:text-[rgba(245,242,237,0.7)]"
+              className="text-[13px] leading-[1.7] mb-4"
               style={{ color: "var(--text-mid)" }}
             >
               {desc}
             </div>
             <span
-              className="text-[11px] font-bold tracking-[0.1em] uppercase transition-colors"
+              className="text-[11px] font-bold tracking-[0.1em] uppercase"
               style={{ color: "var(--accent-gold)" }}
             >
               {cta} &rsaquo;

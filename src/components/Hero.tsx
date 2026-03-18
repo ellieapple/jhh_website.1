@@ -11,7 +11,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative flex items-center overflow-hidden"
-      style={{ minHeight: "85vh", marginTop: "97px", background: "var(--slate-900)" }}
+      style={{ minHeight: "100svh", marginTop: "97px", background: "var(--slate-900)" }}
     >
       {/* Background image */}
       <Image
@@ -33,7 +33,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[720px] px-6 sm:px-10 py-14 sm:py-16">
+      <div className="relative z-10 w-full max-w-[720px] px-6 sm:px-10 py-12 sm:py-16">
         {/* Badge */}
         <div
           className="animate-fade-up-1 inline-flex items-center gap-2 px-4 py-2 mb-7 text-[11px] font-bold tracking-[0.12em] uppercase"
@@ -58,7 +58,7 @@ export default function Hero() {
 
         {/* Sub */}
         <p
-          className="animate-fade-up-3 text-[17px] leading-[1.7] mb-9 max-w-[520px]"
+          className="animate-fade-up-3 text-[15px] sm:text-[17px] leading-[1.7] mb-9 max-w-[520px]"
           style={{ color: "rgba(245,242,237,0.7)" }}
         >
           20+ years of hands-on experience across HVAC, roofing, siding, framing, and plumbing. 

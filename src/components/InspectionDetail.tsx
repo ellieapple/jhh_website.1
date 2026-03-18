@@ -1,61 +1,74 @@
-import { INSPECTION_BLOCKS } from "@/lib/constants";
+const inspectionCategories = [
+  {
+    title: "Older Homes",
+    items: ["Structural", "Energy efficiency", "Pre-purchase"],
+  },
+  {
+    title: "New Homes",
+    items: ["Construction oversight", "Systems", "Pre-purchase"],
+  },
+  {
+    title: "Energy Audit",
+    items: ["Energy usage", "Efficiency analysis"],
+  },
+  {
+    title: "Multi-Family",
+    items: ["Maintenance costs", "Safety", "Structural", "Mechanical / Electrical"],
+  },
+  {
+    title: "Commercial / Industrial",
+    items: ["Maintenance costs", "Safety", "Structural"],
+  },
+];
 
 export default function InspectionDetail() {
   return (
     <section
       id="inspections"
-      className="px-6 sm:px-10 py-20"
-      style={{ background: "var(--warm-white)" }}
+      className="px-6 sm:px-10 py-20 sm:py-24"
+      style={{ background: "var(--cream)" }}
       aria-labelledby="inspections-heading"
     >
       <div className="max-w-[1100px] mx-auto">
-        <span className="section-label">Inspection Services</span>
-        <h2
-          id="inspections-heading"
-          className="font-serif mb-4"
-          style={{ fontSize: "clamp(28px,4vw,42px)", color: "var(--text-dark)", lineHeight: 1.15 }}
-        >
-          Backed by hands-on construction experience — not just theory
-        </h2>
-        <p className="text-base leading-[1.7] mb-10" style={{ color: "var(--text-mid)", maxWidth: "640px" }}>
-          All inspections provided in accordance with the International Association of 
-          Certified Home Inspectors (NACHI) Standards &amp; Practices.
-        </p>
-
-        <div
-          className="grid gap-6 md:gap-10 mt-10"
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}
-        >
-          {INSPECTION_BLOCKS.map(({ title, body }) => (
-            <div
-              key={title}
-              className="p-8"
-              style={{
-                background: "var(--white)",
-                border: "1px solid var(--sand)",
-                borderTop: "3px solid var(--accent-gold)",
-              }}
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20 items-start">
+          {/* Left: heading */}
+          <div className="lg:sticky lg:top-32">
+            <span className="section-label">Inspection Services</span>
+            <h2
+              id="inspections-heading"
+              className="font-serif mb-5"
+              style={{ fontSize: "clamp(28px,4vw,42px)", color: "var(--text-dark)", lineHeight: 1.1 }}
             >
-              <h4 className="font-serif text-xl mb-3" style={{ color: "var(--text-dark)" }}>
-                {title}
-              </h4>
-              <p className="text-sm leading-[1.7]" style={{ color: "var(--text-mid)" }}>
-                {body}
-              </p>
-            </div>
-          ))}
-        </div>
+              Backed by hands-on construction experience
+            </h2>
+            <p className="text-[15px] leading-[1.7] mb-6" style={{ color: "var(--text-mid)" }}>
+              We know what to look for because we&apos;ve built it ourselves.
+            </p>
+            <p className="text-[13px] leading-[1.6]" style={{ color: "var(--text-mid)", borderLeft: "2px solid var(--accent-gold)", paddingLeft: "14px" }}>
+              We provide a full, comprehensive report.
+            </p>
+          </div>
 
-        <div
-          className="mt-8 px-7 py-5"
-          style={{
-            background: "rgba(201,165,92,0.06)",
-            borderLeft: "3px solid var(--accent-gold)",
-          }}
-        >
-          <p className="text-[13px] leading-[1.6]" style={{ color: "var(--text-mid)" }}>
-            All inspections follow NACHI Standards &amp; Practices. We provide you with a full, comprehensive report.
-          </p>
+          {/* Right: category rows */}
+          <div className="flex flex-col divide-y" style={{ borderColor: "var(--sand)" }}>
+            {inspectionCategories.map(({ title, items }) => (
+              <div key={title} className="py-5 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
+                <div
+                  className="text-[13px] font-semibold tracking-[0.04em] uppercase shrink-0 sm:w-48"
+                  style={{ color: "var(--text-dark)" }}
+                >
+                  {title}
+                </div>
+                <div className="flex flex-wrap gap-x-5 gap-y-1">
+                  {items.map((item) => (
+                    <span key={item} className="text-[14px]" style={{ color: "var(--text-mid)" }}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

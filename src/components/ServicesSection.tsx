@@ -32,7 +32,7 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-16 sm:py-20" style={{ background: "var(--slate-900)" }}>
       <div className="max-w-[1100px] mx-auto px-6 sm:px-10">
-        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-8 lg:gap-16 items-start">
           {/* Left column - text and CTAs */}
           <div className="lg:sticky lg:top-32">
             <h2
@@ -55,13 +55,13 @@ export default function ServicesSection() {
           </div>
 
           {/* Right column - service cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[2px]" style={{ background: "var(--slate-800)" }}>
+          <div className="grid grid-cols-2 gap-[2px]" style={{ background: "var(--slate-800)" }}>
             {services.map(({ title, image, items, cta }) => (
               <button
                 key={title}
                 onClick={openModal}
                 className="relative group text-left overflow-hidden cursor-pointer border-none"
-                style={{ background: "var(--slate-700)", minHeight: "260px" }}
+                style={{ background: "var(--slate-700)", minHeight: "200px" }}
               >
                 {/* Background image */}
                 <Image
